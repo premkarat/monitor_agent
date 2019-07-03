@@ -47,11 +47,11 @@ Example::
 
     To start as daemon
 
-    monitor.py start 127.0.0.1 10
+    sudo monitor.py start 127.0.0.1 10
 
     To stop the running daemon
 
-    monitor.py stop
+    sudo monitor.py stop
 
 Monitor result log
 ==================

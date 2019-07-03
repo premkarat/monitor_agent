@@ -17,8 +17,8 @@ import time
 
 def usage():
     print("usage:")
-    print("\t montior.py start <host-ip> <interval>")
-    print("\t montior.py stop\n")
+    print("\t sudo montior.py start <host-ip> <interval>")
+    print("\t sudo montior.py stop\n")
     print("\t <host-ip>: Valid IPv4 address")
     print("\t <interval>: in seconds. Minimum 1 sec")
     print("\t start: Run as daemon")
@@ -104,7 +104,9 @@ def get_process_diff(prev_nprocs):
     cur_nprocs = int(output)
     diff = cur_nprocs - prev_nprocs
     sys.stdout.write(
-        'current number of process: %s and increase/decrease: %d\n' % (cur_nprocs, diff)
+        'current number of process: %s and increase/decrease: %d\n' % (
+            cur_nprocs, diff
+        )
     )
 
     return cur_nprocs
@@ -126,7 +128,7 @@ def get_var_partition_disk_usage_diff(prev_dusage):
         cur_dusage = int(match[0])
         diff = cur_dusage - prev_dusage
         sys.stdout.write(
-            'disk space usage in /var partion: %s%% and increase/decrease: %d%%\n' % (
+            'disk space usage in /var: %s%% and increase/decrease: %d%%\n' % (
                 match[0], diff
             )
         )
